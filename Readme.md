@@ -1,4 +1,4 @@
-Nepali Society of Southern Saskatchewan
+SaskGroup
 Home page 
 Membership
 Community News
