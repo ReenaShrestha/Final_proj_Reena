@@ -1,0 +1,14 @@
+1. Create an index.html file wiht a header of hello world woth hte list of the following
+-Australia
+Europ
+northAmerica
+
+
+
+Move that to the public folder
+create an express app
+host hte stattic files in the public folder
+migrate the html to pug
+iterate over the country list
+connect to mongodb
+store and retrieve countru list in mongodb
