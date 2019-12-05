@@ -1,18 +1,17 @@
 {
-  "name": "Final_proj_Reena",
+  "name": "reenaproject",
   "version": "1.0.0",
   "description": "Nepali Society of Southern Saskatchewan Home page  Membership Community News Events Contact us",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "nodemon"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^2.0.1",
     "pug": "^2.0.4"
   }
 }
