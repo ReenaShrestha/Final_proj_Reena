@@ -12,6 +12,16 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "nodemon": "^2.0.1",
     "pug": "^2.0.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReenaShrestha/Final_proj_Reena.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ReenaShrestha/Final_proj_Reena/issues"
+  },
+  "homepage": "https://github.com/ReenaShrestha/Final_proj_Reena#readme"
 }
