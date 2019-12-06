@@ -1,0 +1,23 @@
+h1 {
+    color:blue;
+    font-size: 38px;
+    text-align: center;
+    }
+    span {
+    color: green;
+    font-size: 28px;
+    }
+    a {
+    color:green;
+    }
+    p {
+    color:black;
+    font-size: 28px;
+    }
+    .right {
+    color: black;
+    text-align:justify;
+    font: 1em sans-serif;
+    font-size: 20px;
+    text-indent: 12px;
+    }
