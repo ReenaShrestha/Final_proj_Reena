@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact us</title>
+  <script>
+    function myForms() {
+      var name = document.forms["RegForm"]["Full name"];
+      var email = document.forms["RegForm"]["Email"];
+      var subject = document.forms["RegForm"]["Subject"];
+      var message = document.forms["RegForm"]["Message"];
+
+      if (name.value == "") {
+        window.alert("Please enter your name.");
+        name.focus();
+        return false;
+      }
+
+      if (email.value == "") {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+      }
+
+      if (subject.value == "") {
+        window.alert("Please enter your Subject");
+        subject.focus();
+        return false;
+      }
+
+      if (message.value == "") {
+        window.alert("Please enter your Message.");
+        message.focus();
+        return false;
+      }
+      return true;
+    }
+  </script>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Contact us</h1>
+  <span style="color: #008000;"><a href="indexold.html">Home</a>&nbsp;</span>
+  <p> Email SaskGroup</p>
+  <fieldset style="width:800px">
+    <form name="RegForm" action="contact" onsubmit="return myForms()" method="post">
+      Fullname:<br>
+      <input type="text" name="Full name" placeholder="Your Full name..">
+      <br>
+      Email:<br>
+      <input type="text" name="Email" placeholder="Your Email..">
+      <br>
+      Subject:<br>
+      <input type="text" name="Subject">
+      <br>
+      Message:<br>
+      <textarea name="Message" rows="10" cols="80" placeholder="Write message..."></textarea>
+
+
+      <input type="submit" value="send" name="Submit">
+    </form>
+
+    </form>
+  </fieldset>
+  <fieldset style="width: 300px">
+    <p>Phone No: <a href="tel:306-713-1275">306-713-1275</a></p>
+    <!--<p> Mail To: <a href="mailto:reenashrestha2@gmail.com">reenashrestha2@gmail.com</a></p></p> -->
+  </fieldset>
+</body>
+
+</html>

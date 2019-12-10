@@ -1,6 +1,6 @@
 h1 {
     color:blue;
-    font-size: 38px;
+    font-size: 41px;
     text-align: center;
     padding: 16px;
     }
@@ -11,19 +11,49 @@ h1 {
     a {
     color:green;
     background: black;
-    padding: 13px;
+    padding: 16px;
     }
     p {
     color:black;
     font-size: 28px;
     }
-    .right {
-    color: black;
+    div.right {
+       
+position: relative;
+  width: 1000px;
+  height: 200px;
+  left: 100px;
+  top: -10px;
+ color: black;
     text-align:justify;
     font: 1em sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     text-indent: 12px;
+    }
+    h3 {
+        position: relative;
+        top: 130Px;
+        left: -300px;
+        color: orange;
+        font-size: 35px;
+        font: bold;
+        text-align: center;
     }
     a:hover, a:active {
         background-color:grey;
     }
+    div.left{
+        width: 320px;
+        text-align: center;
+  padding: 10px;
+  border: 5px solid gray;
+  margin-left: auto;
+  margin-right: auto;
+  
+    }
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      body {background-color: powderblue;}

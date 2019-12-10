@@ -12,12 +12,15 @@
     label{
         color: blue;
     }
+    form {
+      position: ;
+    }
     </style> 
 </head>
 <body>
     <h2>Application form for new membership</h2>
-    <p>To apply for SaskGroup membership please fill in the questions below. SaskGroup will add your email address and Phone number to our list for communication purpose.</p>
-    <form>
+    <p> <span style="font-size: 18px">To apply for SaskGroup membership please fill in the questions below. SaskGroup will add your email address and Phone number to our list for communication purpose.</p>
+      <form name="RegForm" action="save_user.html" onsubmit="return myForms()" method="post">
             <label for="abc">Are you new comer to Regina/Saskatchewan?</label> <br>
             <div class="form-check form-check-inline">
               
