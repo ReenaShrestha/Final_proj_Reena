@@ -5,8 +5,8 @@ const app = express()
 const bodyParser = require('body-parser')
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-
 var mongoose = require('mongoose');
+var SaskModel = require('./models/sask.model')
 
 //Set up default mongoose connection
 var mongoDB = 'mongodb+srv://electrical:elmongo@cluster0-7oxa5.mongodb.net/projectreena?retryWrites=true&w=majority';

@@ -1,24 +1,22 @@
 const mongoose = require('mongoose');
-const UserSchema = require('./sask.model').UserSchema
 
-const MatchSchema = new mongoose.Schema({
-  _id: Number,
-  connection: [UserSchema],
-  created: { type: Date, default: Date.now }
+const UserSchema = new mongoose.Schema({
+
+  name: String,
+  
 });
 
-module.exports = {
-  MatchSchema,
-  MatchModel: mongoose.model('matches', MatchSchema)
-}
+var name = mongoose.model('name', UserSchema);
 
-//Require Mongoose
-var mongoose = require('mongoose');
+var nam = new name({ name: '/contact' });
+nam.save(function (err) {
+  if (err) return handleError(err);
+  // saved!
+});
 
-//Define a schema
-var Schema = mongoose.Schema;
+// or
 
-var SomeModelSchema = new Schema({
-  a_string: String,
-  a_date: Date
+name.create({ name: 'reeta' }, function (err, nam) {
+  if (err) return handleError(err);
+  // saved!
 });
