@@ -11,6 +11,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 var SaskModel = require('./models/sask.model')
 var UserModel = require('./models/user.model')
+var NewcomerModel = require('./models/apply.model')
 //Set up default mongoose connection
 var mongoDB = 'mongodb+srv://electrical:elmongo@cluster0-7oxa5.mongodb.net/projectreena?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
@@ -70,6 +71,17 @@ app.post("/contact", urlencodedParser, (req, res) => {
       res.status(400).send("unable to save to database");
     });
 });
+app.post("/apply", urlencodedParser, (req, res) => {
+  var myData = new NewcomerModel(req.body);
+  myData.save()
+    .then(item => {
+      res.redirect("/")
+    })
+    .catch(err => {
+      res.status(400).send("unable to save to database");
+    });
+});
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
