@@ -1,13 +1,16 @@
 const express = require('express')
 const port = process.env.PORT || 3000
 const app = express()
-
+//mongoose.Promise = global.Promise;
 const bodyParser = require('body-parser')
-const urlencodedParser = bodyParser.urlencoded({ extended: false });
+app.use(bodyParser.json());
+const urlencodedParser = bodyParser.urlencoded({ extended: true});
 
+//app.use(bodyParser.urlencoded({ extended: true }));
 var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 var SaskModel = require('./models/sask.model')
-
+var UserModel = require('./models/user.model')
 //Set up default mongoose connection
 var mongoDB = 'mongodb+srv://electrical:elmongo@cluster0-7oxa5.mongodb.net/projectreena?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
@@ -37,10 +40,17 @@ app.get('/event', (req, res) => {
 app.get('/contact', (req,res) =>{
   res.render('contact',{})
 });
-app.post('/contact', urlencodedParser, (req, res)=>{
-  console.log(req.body)
-  res.send('success');
-})
+
+app.post("/contact", urlencodedParser, (req, res) => {
+  var myData = new UserModel(req.body);
+  myData.save()
+    .then(item => {
+      res.redirect("/")
+    })
+    .catch(err => {
+      res.status(400).send("unable to save to database");
+    });
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
