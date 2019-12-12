@@ -1,0 +1,44 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Document
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' crossorigin='anonymous')
+  link(rel='stylesheet' type='text/css' href='styles.css')
+  style(type='text/css').
+    label{
+    color: blue;
+    }
+    form {
+    position: ;
+    }
+h2 Application form for new membership
+p
+  span(style='font-size: 18px')
+    | To apply for SaskGroup membership please fill in the questions below. SaskGroup will add your email address and Phone number to our list for communication purpose.
+form(name='RegForm' action='save_user.html' onsubmit='return myForms()' method='post')
+  label(for='abc') Are you new comer to Regina/Saskatchewan?
+  br
+  .form-check.form-check-inline
+    input#inlineRadio1.form-check-input(type='radio' name='inlineRadioOptions' value='option1')
+    label.form-check-label(for='inlineRadio1') Yes
+  .form-check.form-check-inline
+    input#inlineRadio2.form-check-input(type='radio' name='inlineRadioOptions' value='option2')
+    label.form-check-label(for='inlineRadio2') No
+  br
+  br
+  label  Member&apos;s name:
+  div
+    input#firstname(type='text' name='First name' placeholder='First name')
+    input#lastname(type='text' name='Last name' placeholder='Last name')
+  br
+  label  Email Address:
+  div
+    input#Email(type='email' name='Email' placeholder='Email Address')
+  br
+  label  Phone No:
+  div
+    input#phone(type='number' name='phonr' placeholder='Phone Number')
+  br
+  button.btn.btn-primary(type='submit') Submit

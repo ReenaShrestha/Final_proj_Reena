@@ -1,0 +1,44 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Renew
+  style.
+    p {
+    color: brown;
+    font-size: 20px;
+    padding: 12px 40px;
+    }
+    input[type=text]{
+    padding: 20px;
+    }
+    input[type=submit],input[type=reset] {
+    background-color: #4CAF50;
+    font-size: 25px;
+    color: white;
+    padding:12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right:25px;
+    }
+    
+h1 Renew your membership
+form(name='RegForm' action='renewed.html' onsubmit='return myForms()' method='post')
+  p
+    | Name: 
+    input(type='text' size='65' name=' Full Name')
+  br
+  p
+    | E-mail Address: 
+    input(type='text' size='65' name='Email')
+  br
+  p 
+    span(style='display: inline;')
+    input(type='submit' value='Submit' name='Submit')  
+
+    input(type='reset' value='Reset' name='Reset')
+
+    

@@ -33,12 +33,31 @@ app.get('/', (req, res) => {
 });
 app.get('/index', (req, res) => {
   res.render('index', {});
+
+});
+app.get('/member', (req, res) => {
+  res.render('member',{})
+});
+app.get('/application', (req, res) => {
+  res.render('application',{})
 });
 app.get('/event', (req, res) => {
   res.render('event',{})
 });
+app.get('/pastevent', (req, res) => {
+  res.render('pastevent',{})
+});
+app.get('/upcoming', (req, res) => {
+  res.render('upcoming',{})
+});
+app.get('/renew', (req, res) => {
+  res.render('renew',{})
+});
 app.get('/contact', (req,res) =>{
   res.render('contact',{})
+});
+app.get('/About', (req,res) =>{
+  res.render('About',{})
 });
 
 app.post("/contact", urlencodedParser, (req, res) => {
