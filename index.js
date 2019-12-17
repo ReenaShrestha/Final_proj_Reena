@@ -1,10 +1,12 @@
 const express = require('express')
 const port = process.env.PORT || 3000
+require('dotenv').config()
 const app = express()
 //mongoose.Promise = global.Promise;
 const bodyParser = require('body-parser')
 app.use(bodyParser.json());
 const urlencodedParser = bodyParser.urlencoded({ extended: true});
+
 
 //app.use(bodyParser.urlencoded({ extended: true }));
 var mongoose = require('mongoose');
@@ -12,8 +14,10 @@ mongoose.Promise = global.Promise;
 var SaskModel = require('./models/sask.model')
 var UserModel = require('./models/user.model')
 var NewcomerModel = require('./models/apply.model')
+var RenewModel = require('./models/renew.model')
 //Set up default mongoose connection
-var mongoDB = 'mongodb+srv://electrical:elmongo@cluster0-7oxa5.mongodb.net/projectreena?retryWrites=true&w=majority';
+var mongoDB = process.env.MONGO_CONNECT_URI
+//var mongoDB = 'mongodb+srv://electrical:elmongo@cluster0-7oxa5.mongodb.net/projectreena?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 
 //Get the default connection
@@ -56,6 +60,10 @@ app.get('/contact', (req,res) =>{
 app.get('/About', (req,res) =>{
   res.render('About',{})
 });
+app.get('/gallery', (req,res) =>{
+  res.render('gallery',{})
+});
+
 
 app.post("/contact", urlencodedParser, (req, res) => {
   var myData = new UserModel(req.body);
@@ -77,7 +85,16 @@ app.post("/apply", urlencodedParser, (req, res) => {
       res.status(400).send("unable to save to database");
     });
 });
-
+app.post("/renew", urlencodedParser, (req, res) => {
+  var myData = new RenewModel(req.body);
+  myData.save()
+    .then(item => {
+      res.redirect("/")
+    })
+    .catch(err => {
+      res.status(400).send("unable to save to database");
+    });
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

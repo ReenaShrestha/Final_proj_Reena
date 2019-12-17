@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const ApplySchema = new mongoose.Schema({
-  Name: String,
+  Firstname: String,
+  Lastname: String,
   Email: String,
   phone: Number,
 });
