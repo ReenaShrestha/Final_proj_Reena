@@ -1,6 +1,6 @@
 const express = require('express')
 const port = process.env.PORT || 3000
-require('dotenv').config()
+//require('dotenv').config()
 const app = express()
 //mongoose.Promise = global.Promise;
 const bodyParser = require('body-parser')
@@ -16,8 +16,8 @@ var UserModel = require('./models/user.model')
 var NewcomerModel = require('./models/apply.model')
 var RenewModel = require('./models/renew.model')
 //Set up default mongoose connection
-var mongoDB = process.env.MONGO_CONNECT_URI
-//var mongoDB = 'mongodb+srv://electrical:elmongo@cluster0-7oxa5.mongodb.net/projectreena?retryWrites=true&w=majority';
+//var mongoDB = process.env.MONGO_CONNECT_URI
+var mongoDB = 'mongodb+srv://electrical:elmongo@cluster0-7oxa5.mongodb.net/projectreena?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 
 //Get the default connection
