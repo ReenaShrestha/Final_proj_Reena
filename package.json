@@ -1,7 +1,7 @@
 {
   "name": "reenaproject",
   "version": "1.0.0",
-  "description": "Nepali Society of Southern Saskatchewan Home page  Membership Community News Events Contact us",
+  "description": "Nepali Society Home page  Membership Community News Events Contact us",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
